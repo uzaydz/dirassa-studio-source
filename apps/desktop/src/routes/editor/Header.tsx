@@ -211,10 +211,10 @@ export function Header() {
 					type="button"
 					class={cx(
 						"flex gap-1.5 justify-center items-center px-4 w-full h-[40px] max-w-[100px] text-[0.8125rem] font-medium text-white rounded-xl outline-hidden",
-						"bg-linear-to-b from-[#3b82f6] to-[#2563eb]",
-						"shadow-[0_4px_14px_-6px_rgba(37,99,235,0.5),inset_0_1px_0_0_rgba(255,255,255,0.22)]",
+						"bg-linear-to-b from-[#F98A2B] to-[#E25C08]",
+						"shadow-[0_4px_14px_-6px_rgba(226,92,8,0.5),inset_0_1px_0_0_rgba(255,255,255,0.22)]",
 						"transition-[box-shadow,filter] duration-200 ease-out",
-						"hover:brightness-[1.08] hover:shadow-[0_8px_22px_-8px_rgba(37,99,235,0.6),inset_0_1px_0_0_rgba(255,255,255,0.28)]",
+						"hover:brightness-[1.08] hover:shadow-[0_8px_22px_-8px_rgba(226,92,8,0.6),inset_0_1px_0_0_rgba(255,255,255,0.28)]",
 						"active:brightness-95",
 					)}
 					onClick={() => {

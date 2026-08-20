@@ -55,8 +55,8 @@ you will need to grant permissions to it instead of `Cap - Development.app`.
 
 #### Where are my recordings stored?
 
-You can find your recordings at `~/Library/Application Support/so.cap.desktop.dev/recordings` on macOS,
-and `%programfiles%/so.cap.desktop.dev/recordings` on Windows.
+You can find your recordings at `~/Library/Application Support/studio.dirassa.desktop.dev/recordings` on macOS,
+and `%programfiles%/studio.dirassa.desktop.dev/recordings` on Windows.
 
 ### `@cap/web` (cap.so website)
 

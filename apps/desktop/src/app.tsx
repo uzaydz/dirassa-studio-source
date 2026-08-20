@@ -24,6 +24,7 @@ import WindowChromeLayout from "./routes/(window-chrome)";
 import SettingsLayout from "./routes/(window-chrome)/settings";
 import { authStore, generalSettingsStore } from "./store";
 import { identifyUser, initAnonymousUser } from "./utils/analytics";
+import { isBrowserPreview } from "./utils/browser-preview";
 import { type AppTheme, commands } from "./utils/tauri";
 import titlebar from "./utils/titlebar-state";
 
@@ -82,6 +83,9 @@ const CameraPage = lazy(() => import("./routes/camera"));
 const CaptureAreaPage = lazy(() => import("./routes/capture-area"));
 const DebugPage = lazy(() => import("./routes/debug"));
 const EditorPage = lazy(() => import("./routes/editor"));
+const BrowserPreviewEditorPage = lazy(
+	() => import("./routes/editor/BrowserPreview"),
+);
 const InProgressRecordingPage = lazy(
 	() => import("./routes/in-progress-recording"),
 );
@@ -232,7 +236,9 @@ function Inner() {
 					<Route
 						path="/editor"
 						info={{ AUTO_SHOW_WINDOW: false }}
-						component={EditorPage}
+						component={
+							isBrowserPreview() ? BrowserPreviewEditorPage : EditorPage
+						}
 					/>
 					<Route
 						path="/in-progress-recording"

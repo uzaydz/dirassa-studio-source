@@ -8,14 +8,14 @@ import {
 import IconLucideAlertCircle from "~icons/lucide/alert-circle";
 
 const funMessages = [
-	"Adjusting the Cap just right...",
-	"Putting on our thinking Cap...",
-	"Cap-sizing the pixels...",
-	"Wearing our processing Cap...",
-	"Cap-tivating import in progress...",
-	"Flipping our Cap backwards...",
-	"Cap-puccino break? Almost done...",
-	"Cap-able of great things...",
+	"Adjusting the Dirassa Studio just right...",
+	"Putting on our thinking Dirassa Studio...",
+	"Dirassa Studio-sizing the pixels...",
+	"Wearing our processing Dirassa Studio...",
+	"Dirassa Studio-tivating import in progress...",
+	"Flipping our Dirassa Studio backwards...",
+	"Dirassa Studio-puccino break? Almost done...",
+	"Dirassa Studio-able of great things...",
 ];
 
 export type ImportProgressProps = {

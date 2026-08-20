@@ -86,8 +86,7 @@ import {
 	type UploadProgress,
 } from "~/utils/tauri";
 import { openTeleprompter } from "~/utils/teleprompter";
-import IconCapLogoFull from "~icons/cap/logo-full";
-import IconCapLogoFullDark from "~icons/cap/logo-full-dark";
+import IconCapLogo from "~icons/cap/logo";
 import IconLucideAppWindowMac from "~icons/lucide/app-window-mac";
 import IconLucideArrowLeft from "~icons/lucide/arrow-left";
 import IconLucideBug from "~icons/lucide/bug";
@@ -1769,8 +1768,12 @@ function createUpdateCheck() {
 		let shouldUpdate: boolean | undefined;
 		try {
 			shouldUpdate = await dialog.confirm(
-				`Version ${update.version} of Cap is available, would you like to install it?`,
-				{ title: "Update Cap", okLabel: "Update", cancelLabel: "Ignore" },
+				`Version ${update.version} of Dirassa Studio is available, would you like to install it?`,
+				{
+					title: "Update Dirassa Studio",
+					okLabel: "Update",
+					cancelLabel: "Ignore",
+				},
 			);
 		} catch (e) {
 			console.error("Failed to show update dialog:", e);
@@ -1793,8 +1796,8 @@ function createUpdateReadyToast() {
 				<div class="flex flex-col gap-2.5 px-4 py-3 rounded-xl border shadow-lg bg-gray-1 border-gray-4 text-gray-12 w-[min(24rem,calc(100vw-2rem))]">
 					<p class="text-sm">
 						{update.installed
-							? `Cap ${update.version} has been installed — restart to apply`
-							: `Cap ${update.version} is ready to install`}
+							? `Dirassa Studio ${update.version} has been installed — restart to apply`
+							: `Dirassa Studio ${update.version} is ready to install`}
 					</p>
 					<div class="flex gap-2 items-center">
 						<button
@@ -1805,7 +1808,7 @@ function createUpdateReadyToast() {
 								const install = update.installed
 									? Promise.resolve(null)
 									: commands.updatesDownloadAndInstall();
-								// On Windows the NSIS installer restarts Cap itself, so the
+								// On Windows the NSIS installer restarts Dirassa Studio itself, so the
 								// relaunch call is unreachable there; that matches update.tsx.
 								install
 									.then(() => relaunch())
@@ -3298,7 +3301,7 @@ function Page() {
 				<div class="flex items-center justify-between mt-[16px] mb-[6px]">
 					<div class="flex items-center space-x-1">
 						<a
-							class="*:w-[92px] *:h-auto text-(--text-primary)"
+							class="flex gap-[7px] items-center text-(--text-primary)"
 							target="_blank"
 							href={
 								auth.data
@@ -3306,8 +3309,10 @@ function Page() {
 									: serverUrl()
 							}
 						>
-							<IconCapLogoFullDark class="hidden dark:block" />
-							<IconCapLogoFull class="block dark:hidden" />
+							<IconCapLogo class="w-[26px] h-auto" />
+							<span class="text-[15px] font-medium tracking-[-0.015em]">
+								Dirassa <span class="opacity-55">Studio</span>
+							</span>
 						</a>
 						<ErrorBoundary fallback={null}>
 							<Suspense>

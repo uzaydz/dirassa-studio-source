@@ -1,6 +1,8 @@
 // @refresh reload
 import { mount, StartClient } from "@solidjs/start/client";
 
+import { initializeBrowserPreview } from "./utils/browser-preview";
+
 function initPlatformClass() {
 	import("@tauri-apps/plugin-os")
 		.then(({ type }) => {
@@ -13,6 +15,8 @@ function initPlatformClass() {
 }
 
 async function initApp() {
+	initializeBrowserPreview();
+
 	if (
 		import.meta.env.DEV &&
 		import.meta.env.VITE_SOLID_DEVTOOLS &&

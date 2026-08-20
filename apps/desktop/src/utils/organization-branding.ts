@@ -49,7 +49,7 @@ export type OrganizationBrandColorSwatch = {
 };
 
 export const ORGANIZATION_BRAND_COLOR_DEFAULTS = {
-	primary: "#4785FF",
+	primary: "#F2670F",
 	secondary: "#FFFFFF",
 	accent: "#FF4766",
 	background: "#000000",

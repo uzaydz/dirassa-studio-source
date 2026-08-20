@@ -61,7 +61,7 @@ export default function FeedbackTab() {
 			<SettingsPageContent>
 				<Section
 					title="Feedback"
-					description="Help us improve Cap by submitting feedback or reporting bugs. We'll get right on it."
+					description="Help us improve Dirassa Studio by submitting feedback or reporting bugs. We'll get right on it."
 				>
 					<form
 						class="space-y-4"
@@ -75,7 +75,7 @@ export default function FeedbackTab() {
 								<textarea
 									value={feedback()}
 									onInput={(e) => setFeedback(e.currentTarget.value)}
-									placeholder="Tell us what you think about Cap..."
+									placeholder="Tell us what you think about Dirassa Studio..."
 									required
 									minLength={10}
 									class="p-2 w-full h-32 text-[13px] rounded-md border transition-colors duration-200 resize-none bg-gray-2 placeholder:text-gray-10 border-gray-3 text-primary focus:outline-hidden focus:ring-1 focus:ring-gray-8 hover:border-gray-6"
@@ -107,7 +107,7 @@ export default function FeedbackTab() {
 
 				<Section
 					title="Join the Community"
-					description="Have questions, want to share ideas, or just hang out? Join the Cap Discord community."
+					description="Have questions, want to share ideas, or just hang out? Join the Dirassa Studio Discord community."
 				>
 					<Button
 						onClick={() => shell.open("https://cap.link/discord")}
@@ -120,7 +120,7 @@ export default function FeedbackTab() {
 
 				<Section
 					title="Debug Information"
-					description="Upload your logs to help us diagnose issues with Cap. No personal information is included."
+					description="Upload your logs to help us diagnose issues with Dirassa Studio. No personal information is included."
 				>
 					<Button
 						onClick={handleUploadLogs}

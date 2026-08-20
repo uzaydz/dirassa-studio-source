@@ -343,7 +343,7 @@ pub fn spawn_background_loop(app: AppHandle) {
                         continue;
                     }
 
-                    // Safe while Cap runs: the .app bundle is swapped in place
+                    // Safe while Dirassa Studio runs: the .app bundle is swapped in place
                     // and takes effect on relaunch.
                     if let Err(err) = update.install(bytes) {
                         warn!("Failed to install nightly update {version}: {err}");

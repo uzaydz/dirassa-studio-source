@@ -1,0 +1,28 @@
+name: Build Apple Silicon DMG
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-js
+      - uses: dtolnay/rust-toolchain@1.88.0
+        with:
+          targets: aarch64-apple-darwin
+      - uses: ./.github/actions/setup-rust-cache
+        with:
+          target: aarch64-apple-darwin
+          save-cache: "true"
+      - name: Prepare native dependencies
+        run: pnpm cap-setup
+      - name: Build Dirassa Studio DMG
+        run: pnpm tauri:build -- --target aarch64-apple-darwin --bundles dmg
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: dirassa-studio-apple-silicon-dmg
+          path: target/aarch64-apple-darwin/release/bundle/dmg/*.dmg
+          if-no-files-found: error

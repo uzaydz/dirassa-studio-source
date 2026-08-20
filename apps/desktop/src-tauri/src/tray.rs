@@ -43,27 +43,31 @@ enum LinuxTrayIcon {
 impl LinuxTrayIcon {
     fn name(self) -> &'static str {
         match self {
-            Self::Default => "so.cap.desktop-tray-default-symbolic",
-            Self::Instant => "so.cap.desktop-tray-instant-symbolic",
-            Self::Screenshot => "so.cap.desktop-tray-screenshot-symbolic",
-            Self::Studio => "so.cap.desktop-tray-studio-symbolic",
-            Self::Stop => "so.cap.desktop-tray-stop-symbolic",
+            Self::Default => "studio.dirassa.desktop-tray-default-symbolic",
+            Self::Instant => "studio.dirassa.desktop-tray-instant-symbolic",
+            Self::Screenshot => "studio.dirassa.desktop-tray-screenshot-symbolic",
+            Self::Studio => "studio.dirassa.desktop-tray-studio-symbolic",
+            Self::Stop => "studio.dirassa.desktop-tray-stop-symbolic",
         }
     }
 
     fn svg(self) -> &'static str {
         match self {
             Self::Default => {
-                include_str!("../icons/linux/so.cap.desktop-tray-default-symbolic.svg")
+                include_str!("../icons/linux/studio.dirassa.desktop-tray-default-symbolic.svg")
             }
             Self::Instant => {
-                include_str!("../icons/linux/so.cap.desktop-tray-instant-symbolic.svg")
+                include_str!("../icons/linux/studio.dirassa.desktop-tray-instant-symbolic.svg")
             }
             Self::Screenshot => {
-                include_str!("../icons/linux/so.cap.desktop-tray-screenshot-symbolic.svg")
+                include_str!("../icons/linux/studio.dirassa.desktop-tray-screenshot-symbolic.svg")
             }
-            Self::Studio => include_str!("../icons/linux/so.cap.desktop-tray-studio-symbolic.svg"),
-            Self::Stop => include_str!("../icons/linux/so.cap.desktop-tray-stop-symbolic.svg"),
+            Self::Studio => {
+                include_str!("../icons/linux/studio.dirassa.desktop-tray-studio-symbolic.svg")
+            }
+            Self::Stop => {
+                include_str!("../icons/linux/studio.dirassa.desktop-tray-stop-symbolic.svg")
+            }
         }
     }
 }
@@ -427,11 +431,17 @@ fn build_tray_menu(app: &AppHandle, cache: &PreviousItemsCache) -> tauri::Result
                 &MenuItem::with_id(
                     app,
                     "version",
-                    format!("Cap v{}", env!("CARGO_PKG_VERSION")),
+                    format!("Dirassa Studio v{}", env!("CARGO_PKG_VERSION")),
                     false,
                     None::<&str>,
                 )?,
-                &MenuItem::with_id(app, TrayItem::Quit, "Quit Cap", true, None::<&str>)?,
+                &MenuItem::with_id(
+                    app,
+                    TrayItem::Quit,
+                    "Quit Dirassa Studio",
+                    true,
+                    None::<&str>,
+                )?,
             ],
         );
     }
@@ -550,14 +560,14 @@ fn build_tray_menu(app: &AppHandle, cache: &PreviousItemsCache) -> tauri::Result
     menu.append(&MenuItem::with_id(
         app,
         "version",
-        format!("Cap v{}", env!("CARGO_PKG_VERSION")),
+        format!("Dirassa Studio v{}", env!("CARGO_PKG_VERSION")),
         false,
         None::<&str>,
     )?)?;
     menu.append(&MenuItem::with_id(
         app,
         TrayItem::Quit,
-        "Quit Cap",
+        "Quit Dirassa Studio",
         true,
         None::<&str>,
     )?)?;
@@ -697,7 +707,7 @@ fn set_linux_tray_icon(tray: &TrayIcon<tauri::Wry>, icon: LinuxTrayIcon) -> taur
         let indicator = inner.app_indicator() as *mut libappindicator::AppIndicator;
         if let Some(indicator) = indicator.as_mut() {
             indicator.set_icon_theme_path(&icon_dir.to_string_lossy());
-            indicator.set_icon_full(&icon_name, "Cap tray icon");
+            indicator.set_icon_full(&icon_name, "Dirassa Studio tray icon");
         }
     })?;
 

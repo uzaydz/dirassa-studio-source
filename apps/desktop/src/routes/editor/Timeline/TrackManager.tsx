@@ -174,8 +174,8 @@ export function TrackManager(props: {
 			<Popover.Trigger
 				class={cx(
 					"group flex relative z-30 gap-1 items-center justify-center px-2 h-8 w-full min-w-0 text-[0.6875rem] font-medium text-white rounded-lg outline-hidden",
-					"bg-linear-to-b from-[#3b82f6] to-[#2563eb]",
-					"shadow-[0_2px_8px_-4px_rgba(37,99,235,0.55),inset_0_1px_0_0_rgba(255,255,255,0.2)]",
+					"bg-linear-to-b from-[#F98A2B] to-[#E25C08]",
+					"shadow-[0_2px_8px_-4px_rgba(226,92,8,0.55),inset_0_1px_0_0_rgba(255,255,255,0.2)]",
 					"transition-[box-shadow,filter] duration-200 ease-out",
 					"hover:brightness-[1.06]",
 					"active:brightness-95",

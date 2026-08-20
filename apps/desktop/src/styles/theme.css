@@ -5,8 +5,6 @@
 @import "@radix-ui/colors/gray.css";
 @import "@radix-ui/colors/gray-alpha.css";
 @import "@radix-ui/colors/gray-dark.css";
-@import "@radix-ui/colors/blue.css";
-@import "@radix-ui/colors/blue-dark.css";
 @import "@radix-ui/colors/indigo.css";
 @import "@radix-ui/colors/indigo-dark.css";
 @import "@radix-ui/colors/yellow.css";
@@ -73,16 +71,64 @@
 
 	--solid-white: #ffffff;
 
-	--blue-50: #ebf1ff;
-	--blue-100: #adc9ff;
-	--blue-200: #85adff;
-	--blue-300: #4785ff;
-	--blue-400: #3f75e0;
-	--blue-500: rgb(54, 102, 197);
+	/* Dirassa Studio accent. The `--blue-*` names below are aliases kept
+	 * on purpose: every accent in the app already reads them, so retinting
+	 * here flips the whole product without touching ~300 call sites. Author
+	 * new code against `--brand-*` / `bg-brand-*`. */
+	--brand-1: #fffcfa;
+	--brand-2: #fff7ef;
+	--brand-3: #ffedd8;
+	--brand-4: #ffdeba;
+	--brand-5: #ffcfa0;
+	--brand-6: #fdbe88;
+	--brand-7: #f2aa72;
+	--brand-8: #e89052;
+	--brand-9: #f2670f;
+	--brand-10: #e25c08;
+	--brand-11: #b84a06;
+	--brand-12: #582d1d;
 
-	--blue-transparent-0: rgba(34, 64, 122, 0);
-	--blue-transparent-10: rgba(34, 64, 122, 0.1);
-	--blue-transparent-20: rgba(34, 64, 122, 0.2);
+	--brand-50: #fff3e4;
+	--brand-100: #ffd9ac;
+	--brand-200: #ffb672;
+	--brand-300: #f2670f;
+	--brand-400: #db5a08;
+	--brand-500: #b84a06;
+
+	--brand-gradient: linear-gradient(
+		140deg,
+		#ffa51c 0%,
+		#fc8213 55%,
+		#f45e07 100%
+	);
+
+	--brand-transparent-0: rgba(184, 74, 6, 0);
+	--brand-transparent-10: rgba(184, 74, 6, 0.1);
+	--brand-transparent-20: rgba(184, 74, 6, 0.2);
+
+	--blue-1: var(--brand-1);
+	--blue-2: var(--brand-2);
+	--blue-3: var(--brand-3);
+	--blue-4: var(--brand-4);
+	--blue-5: var(--brand-5);
+	--blue-6: var(--brand-6);
+	--blue-7: var(--brand-7);
+	--blue-8: var(--brand-8);
+	--blue-9: var(--brand-9);
+	--blue-10: var(--brand-10);
+	--blue-11: var(--brand-11);
+	--blue-12: var(--brand-12);
+
+	--blue-50: var(--brand-50);
+	--blue-100: var(--brand-100);
+	--blue-200: var(--brand-200);
+	--blue-300: var(--brand-300);
+	--blue-400: var(--brand-400);
+	--blue-500: var(--brand-500);
+
+	--blue-transparent-0: var(--brand-transparent-0);
+	--blue-transparent-10: var(--brand-transparent-10);
+	--blue-transparent-20: var(--brand-transparent-20);
 
 	--red-50: #ffebee;
 	--red-100: #ffadbb;
@@ -139,16 +185,38 @@
 
 	--solid-white: #ffffff;
 
-	/* Accent colors remain mostly the same but adjusted for dark theme */
-	--blue-50: #1a2438;
-	--blue-100: #243352;
-	--blue-200: #2e426b;
-	--blue-300: #4785ff;
-	--blue-400: #5c8fff;
-	--blue-500: #0a84ff;
+	/* Only the brand scale is redefined here — the `--blue-*` aliases on
+	 * :root resolve against it, so they follow the theme automatically. */
+	--brand-1: #17120e;
+	--brand-2: #1e160f;
+	--brand-3: #331e0b;
+	--brand-4: #462100;
+	--brand-5: #562800;
+	--brand-6: #66350c;
+	--brand-7: #7e451d;
+	--brand-8: #a35829;
+	--brand-9: #fb7a1c;
+	--brand-10: #ff8f3d;
+	--brand-11: #ffa057;
+	--brand-12: #ffe0c2;
 
-	--blue-transparent-10: rgba(71, 133, 255, 0.1);
-	--blue-transparent-20: rgba(71, 133, 255, 0.2);
+	--brand-50: #2a1a0c;
+	--brand-100: #45260f;
+	--brand-200: #5e3312;
+	--brand-300: #fb7a1c;
+	--brand-400: #ff9440;
+	--brand-500: #ff801f;
+
+	--brand-gradient: linear-gradient(
+		140deg,
+		#ffb444 0%,
+		#fc8213 55%,
+		#f2670f 100%
+	);
+
+	--brand-transparent-0: rgba(251, 122, 28, 0);
+	--brand-transparent-10: rgba(251, 122, 28, 0.12);
+	--brand-transparent-20: rgba(251, 122, 28, 0.24);
 
 	--red-50: #2c1a1e;
 	--red-100: #52232c;

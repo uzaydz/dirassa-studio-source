@@ -96,7 +96,7 @@ export const EXPORT_TO_OPTIONS = [
 		label: "Shareable Link",
 		value: "link",
 		icon: IconCapLink,
-		description: "Share via Cap cloud",
+		description: "Share via Dirassa Studio cloud",
 	},
 ] as const;
 
@@ -1596,7 +1596,7 @@ export function ExportPage() {
 											<Match when={uploadState.type === "done"}>
 												<CompletedExport
 													title="Upload complete"
-													subtitle="Your Cap has been uploaded successfully"
+													subtitle="Your Dirassa Studio has been uploaded successfully"
 												/>
 											</Match>
 										</Switch>

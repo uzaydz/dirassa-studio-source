@@ -21,7 +21,7 @@ DEFAULT_RECORDINGS_DIR = (
 	Path.home()
 	/ "Library"
 	/ "Application Support"
-	/ "so.cap.desktop.dev"
+	/ "studio.dirassa.desktop.dev"
 	/ "recordings"
 )
 NUMERIC_COLUMNS = {

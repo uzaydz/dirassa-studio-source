@@ -1029,19 +1029,21 @@ impl CapWindowId {
 
     pub fn title(&self) -> String {
         match self {
-            Self::Settings => "Cap Settings".to_string(),
-            Self::WindowCaptureOccluder { .. } => "Cap Window Capture Occluder".to_string(),
-            Self::CaptureArea => "Cap Capture Area".to_string(),
-            Self::RecordingControls => "Cap Recording Controls".to_string(),
-            Self::Editor { .. } => "Cap Editor".to_string(),
-            Self::ScreenshotEditor { .. } => "Cap Screenshot Editor".to_string(),
-            Self::ModeSelect => "Cap Mode Selection".to_string(),
-            Self::Onboarding => "Welcome to Cap".to_string(),
-            Self::Camera => "Cap Camera".to_string(),
-            Self::RecordingsOverlay => "Cap Recordings Overlay".to_string(),
-            Self::TargetSelectOverlay { .. } => "Cap Target Select".to_string(),
-            Self::Teleprompter => "Cap Teleprompter".to_string(),
-            _ => "Cap".to_string(),
+            Self::Settings => "Dirassa Studio Settings".to_string(),
+            Self::WindowCaptureOccluder { .. } => {
+                "Dirassa Studio Window Capture Occluder".to_string()
+            }
+            Self::CaptureArea => "Dirassa Studio Capture Area".to_string(),
+            Self::RecordingControls => "Dirassa Studio Recording Controls".to_string(),
+            Self::Editor { .. } => "Dirassa Studio Editor".to_string(),
+            Self::ScreenshotEditor { .. } => "Dirassa Studio Screenshot Editor".to_string(),
+            Self::ModeSelect => "Dirassa Studio Mode Selection".to_string(),
+            Self::Onboarding => "Welcome to Dirassa Studio".to_string(),
+            Self::Camera => "Dirassa Studio Camera".to_string(),
+            Self::RecordingsOverlay => "Dirassa Studio Recordings Overlay".to_string(),
+            Self::TargetSelectOverlay { .. } => "Dirassa Studio Target Select".to_string(),
+            Self::Teleprompter => "Dirassa Studio Teleprompter".to_string(),
+            _ => "Dirassa Studio".to_string(),
         }
     }
 
@@ -3308,13 +3310,13 @@ fn position_traffic_lights_impl(
 // Capture exclusion (WDA_EXCLUDEFROMCAPTURE / NSWindowSharingType::None) also hides
 // the window from "capture-based" displays such as virtual/indirect/dummy-HDMI or
 // mirrored monitors, making it invisible and unreachable. We therefore only protect
-// Cap's own windows while a recording is actually active, which is the only time the
+// Dirassa Studio's own windows while a recording is actually active, which is the only time the
 // exclusion is meaningful.
 //
 // On desktops that are themselves delivered through a capture-based stream (Shadow
 // and other cloud PCs, RDP, VMs), even recording-gated exclusion hides the recording
 // controls from the user and trips DRM detectors (Shadow error S:102), so exclusion
-// is skipped entirely there — Cap's windows then appear in recordings, which is the
+// is skipped entirely there — Dirassa Studio's windows then appear in recordings, which is the
 // lesser evil. Overridable via the CAP_WINDOW_CAPTURE_EXCLUSION env var.
 #[cfg(target_os = "windows")]
 pub fn capture_exclusion_hides_ui() -> bool {
@@ -3330,7 +3332,7 @@ pub fn capture_exclusion_hides_ui() -> bool {
                 %reason,
                 "Skipping window capture exclusion: this desktop is viewed through a \
                  capture-based stream, so excluded windows would be invisible to the user. \
-                 Cap's windows will appear in recordings."
+                 Dirassa Studio's windows will appear in recordings."
             ),
             None => info!("Window capture exclusion re-enabled"),
         }

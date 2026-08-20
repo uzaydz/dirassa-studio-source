@@ -25,7 +25,7 @@ export const DEFAULTS = {
 	stopTimeoutSeconds: 10,
 	storePath:
 		process.env.CAP_STORE_PATH ||
-		`${process.env.HOME}/Library/Application Support/so.cap.desktop.dev/store`,
+		`${process.env.HOME}/Library/Application Support/studio.dirassa.desktop.dev/store`,
 	settleSeconds: 120,
 	trailingSamples: 3,
 };

@@ -1,7 +1,7 @@
 [package]
 name = "cap-desktop"
 version = "0.5.9"
-description = "Beautiful screen recordings, owned by you."
+description = "Dirassa Studio — beautiful screen recordings, owned by you."
 authors = ["you"]
 edition = "2024"
 

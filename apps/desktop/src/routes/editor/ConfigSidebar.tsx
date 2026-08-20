@@ -6128,8 +6128,9 @@ function SyncOffsetsConfig() {
 							</Show>
 							<Show when={clipConfig(index())?.offsetsAutoCalculated === true}>
 								<p class="text-gray-11">
-									Cap calculated these offsets automatically to keep audio in
-									sync with the video. Adjust them if anything still sounds off.
+									Dirassa Studio calculated these offsets automatically to keep
+									audio in sync with the video. Adjust them if anything still
+									sounds off.
 								</p>
 							</Show>
 							{meta().hasSystemAudio && (

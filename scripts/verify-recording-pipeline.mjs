@@ -36,13 +36,13 @@ const desktopAppPath = process.env.CAP_VERIFY_DESKTOP_APP_PATH
 const desktopBundleId =
 	process.env.CAP_VERIFY_DESKTOP_BUNDLE_ID ||
 	(desktopAppPath?.endsWith("Cap - Development.app")
-		? "so.cap.desktop.dev"
-		: "so.cap.desktop");
+		? "studio.dirassa.desktop.dev"
+		: "studio.dirassa.desktop");
 const signDesktopApp = process.env.CAP_VERIFY_SIGN_DESKTOP !== "0";
 const desktopEntitlementsPath = process.env.CAP_VERIFY_DESKTOP_ENTITLEMENTS
 	? path.resolve(process.env.CAP_VERIFY_DESKTOP_ENTITLEMENTS)
 	: path.join(root, "apps", "desktop", "src-tauri", "Entitlements.plist");
-const desktopLogDirs = ["so.cap.desktop.dev", "so.cap.desktop"].map((name) =>
+const desktopLogDirs = ["studio.dirassa.desktop.dev", "studio.dirassa.desktop"].map((name) =>
 	path.join(os.homedir(), "Library", "Logs", name),
 );
 const desktopRecordingDirs = [
@@ -50,14 +50,14 @@ const desktopRecordingDirs = [
 		os.homedir(),
 		"Library",
 		"Application Support",
-		"so.cap.desktop.dev",
+		"studio.dirassa.desktop.dev",
 		"recordings",
 	),
 	path.join(
 		os.homedir(),
 		"Library",
 		"Application Support",
-		"so.cap.desktop",
+		"studio.dirassa.desktop",
 		"recordings",
 	),
 ].filter((value, index, values) => values.indexOf(value) === index);

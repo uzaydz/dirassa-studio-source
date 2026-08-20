@@ -11,7 +11,7 @@ export type GeneralSettingsStore = TauriGeneralSettingsStore & {
 };
 
 export const DEFAULT_TRANSCRIPTION_HINTS = [
-	"Cap",
+	"Dirassa Studio",
 	"TypeScript",
 	"My Brand Name",
 	"mywebsite.com",

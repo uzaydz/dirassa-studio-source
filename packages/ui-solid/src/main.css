@@ -122,9 +122,42 @@
 	--color-blue-300: var(--blue-300);
 	--color-blue-400: var(--blue-400);
 
+	/* Tailwind ships its own blue-500..950; without these the stock blue
+	 * would leak through wherever those steps are used and stay literally
+	 * blue after the rebrand. Fixed values, like the stock palette. */
+	--color-blue-500: #f2670f;
+	--color-blue-600: #db5a08;
+	--color-blue-700: #b84a06;
+	--color-blue-800: #963c05;
+	--color-blue-900: #7a3204;
+	--color-blue-950: #4a1e02;
+
 	--color-blue-transparent-0: var(--blue-transparent-0);
 	--color-blue-transparent-10: var(--blue-transparent-10);
 	--color-blue-transparent-20: var(--blue-transparent-20);
+
+	--color-brand-1: var(--brand-1);
+	--color-brand-2: var(--brand-2);
+	--color-brand-3: var(--brand-3);
+	--color-brand-4: var(--brand-4);
+	--color-brand-5: var(--brand-5);
+	--color-brand-6: var(--brand-6);
+	--color-brand-7: var(--brand-7);
+	--color-brand-8: var(--brand-8);
+	--color-brand-9: var(--brand-9);
+	--color-brand-10: var(--brand-10);
+	--color-brand-11: var(--brand-11);
+	--color-brand-12: var(--brand-12);
+	--color-brand-50: var(--brand-50);
+	--color-brand-100: var(--brand-100);
+	--color-brand-200: var(--brand-200);
+	--color-brand-300: var(--brand-300);
+	--color-brand-400: var(--brand-400);
+	--color-brand-500: var(--brand-500);
+
+	--color-brand-transparent-0: var(--brand-transparent-0);
+	--color-brand-transparent-10: var(--brand-transparent-10);
+	--color-brand-transparent-20: var(--brand-transparent-20);
 
 	--color-red-1: var(--red-1);
 	--color-red-2: var(--red-2);
@@ -192,5 +225,5 @@ body {
 }
 
 .custom-bg {
-	background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+	background: linear-gradient(180deg, #f98a2b 0%, #e25c08 100%);
 }

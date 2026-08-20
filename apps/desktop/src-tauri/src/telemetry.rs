@@ -352,7 +352,7 @@ fn http_client() -> &'static reqwest::Client {
     HTTP_CLIENT.get_or_init(|| {
         // OpenPanel derives device/OS breakdowns from the user agent.
         let user_agent = format!(
-            "Cap/{} ({}; {})",
+            "DirassaStudio/{} ({}; {})",
             env!("CARGO_PKG_VERSION"),
             std::env::consts::OS,
             std::env::consts::ARCH

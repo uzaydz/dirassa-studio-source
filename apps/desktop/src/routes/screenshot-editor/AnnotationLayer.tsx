@@ -1012,7 +1012,7 @@ function SelectionHandles(props: {
 						width={selectionRect().width}
 						height={selectionRect().height}
 						fill="rgba(59, 130, 246, 0.1)"
-						stroke="#3b82f6"
+						stroke="#F2670F"
 						stroke-width={2}
 						rx={4}
 						ry={4}
@@ -1051,8 +1051,8 @@ function Handle(props: {
 			cx={props.cx}
 			cy={props.cy}
 			r={props.r}
-			fill={props.isText ? "#3b82f6" : "white"}
-			stroke={props.isText ? "white" : "#3b82f6"}
+			fill={props.isText ? "#F2670F" : "white"}
+			stroke={props.isText ? "white" : "#F2670F"}
 			stroke-width={props.isText ? 1.5 : 1}
 			style={{
 				"pointer-events": "all",

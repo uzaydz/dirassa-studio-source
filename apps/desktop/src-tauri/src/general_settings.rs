@@ -99,18 +99,18 @@ impl MainWindowRecordingStartBehaviour {
     }
 }
 
-// NOTE: Do not add "Cap Target Select" here — on Windows, WDA_EXCLUDEFROMCAPTURE applied to that
+// NOTE: Do not add "Dirassa Studio Target Select" here — on Windows, WDA_EXCLUDEFROMCAPTURE applied to that
 // hidden window causes it to reappear as a ghost overlay after recording ends.
 const DEFAULT_EXCLUDED_WINDOW_TITLES: &[&str] = &[
-    "Cap",
-    "Cap Settings",
-    "Cap Recording Controls",
-    "Cap Camera",
-    "Cap Window Capture Occluder",
-    "Cap Capture Area",
-    "Cap Mode Selection",
-    "Cap Recordings Overlay",
-    "Cap Teleprompter",
+    "Dirassa Studio",
+    "Dirassa Studio Settings",
+    "Dirassa Studio Recording Controls",
+    "Dirassa Studio Camera",
+    "Dirassa Studio Window Capture Occluder",
+    "Dirassa Studio Capture Area",
+    "Dirassa Studio Mode Selection",
+    "Dirassa Studio Recordings Overlay",
+    "Dirassa Studio Teleprompter",
 ];
 
 pub fn default_excluded_windows() -> Vec<WindowExclusion> {
@@ -285,7 +285,7 @@ fn default_crash_recovery_recording() -> bool {
 
 fn default_transcription_hints() -> Vec<String> {
     vec![
-        "Cap".to_string(),
+        "Dirassa Studio".to_string(),
         "TypeScript".to_string(),
         "My Brand Name".to_string(),
         "mywebsite.com".to_string(),
@@ -508,7 +508,7 @@ pub fn init(app: &AppHandle) {
     {
         store
             .excluded_windows
-            .retain(|w| w.window_title.as_deref() != Some("Cap Target Select"));
+            .retain(|w| w.window_title.as_deref() != Some("Dirassa Studio Target Select"));
         raw_store.set(REMOVE_TARGET_SELECT_MIGRATION_KEY, json!(true));
     }
 
@@ -598,7 +598,7 @@ mod tests {
     #[test]
     fn appends_missing_default_excluded_windows() {
         let mut excluded_windows = vec![
-            title_exclusion("Cap"),
+            title_exclusion("Dirassa Studio"),
             WindowExclusion {
                 bundle_identifier: None,
                 owner_name: Some("Preview".to_string()),
